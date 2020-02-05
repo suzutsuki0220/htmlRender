@@ -13,3 +13,9 @@ module.exports.newNode = function(tagName, value, option = {}) {
 
     return elem;
 };
+
+module.exports.remove = function(elem) {
+    if (elem) {
+        elem.parentNode.removeChild(elem);
+    }
+};
