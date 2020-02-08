@@ -7,15 +7,17 @@ const path = require('path');
 
 module.exports = {
     mode: MODE,
-    entry: [
-        './node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css',
-        './node_modules/@fortawesome/fontawesome-free/css/solid.min.css',
-        './node_modules/bulma/css/bulma.min.css',
-        './webpack-index.js'
-    ],
+    entry: {
+        font: [
+            './node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css',
+            './node_modules/@fortawesome/fontawesome-free/css/solid.min.css'
+        ],
+        bulma: './node_modules/bulma/css/bulma.min.css',
+        htmlRender: './webpack-index.js'
+    },
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: 'htmlRender.js'
+        filename: '[name].bundle.js'
     },
     module: {
         rules: [
