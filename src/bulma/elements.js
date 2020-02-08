@@ -21,6 +21,6 @@ module.exports.notification = function(level, message, autoClose=3000, showClose
     return document.body.insertBefore(notif, document.body.firstChild);
 };
 
-module.exports.makeTable = function(names, values) {
+module.exports.table = function(names, values) {
     return basic.table(names, values, 'table is-fullwidth');
 };
