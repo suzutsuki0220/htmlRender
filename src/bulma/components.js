@@ -1,4 +1,5 @@
 const basic = require('../basic');
+const active = require('./active.js');
 
 module.exports.card = function(elem, cards) {
     const columns = document.createElement('div');
@@ -35,7 +36,7 @@ module.exports.modal = function(content, showCloseButton=true) {
     if (showCloseButton === true) {
         const button = basic.element.newNode('button', '', {class: 'modal-close is-large'});
         button.onclick = function() {
-            active(modal, false);
+            active.switch(modal, false);
         };
         modal.appendChild(button);
     }
@@ -52,7 +53,7 @@ module.exports.modalCard = function(title, content, footer = "", showCloseButton
     if (showCloseButton === true) {
         const button = basic.element.newNode('button', '', {class: 'delete'});
         button.onclick = function() {
-            active(modal, false);
+            active.switch(modal, false);
         }
         header.appendChild(button);
     }
