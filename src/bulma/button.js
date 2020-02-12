@@ -10,5 +10,5 @@ module.exports.okButton = function(contents, onClick) {
 };
 
 module.exports.cancelButton = function(contents, onClick) {
-    return setOnclick(basic.element.newNode("button", contents, {class: "button"}, onClick));
+    return setOnclick(basic.element.newNode("button", contents, {class: "button"}), onClick);
 };
