@@ -1,7 +1,7 @@
 const basic = require('../basic');
 const active = require('./active.js');
 
-module.exports.card = function(elem, cards) {
+module.exports.card = function(cards) {
     const columns = document.createElement('div');
     columns.classList.add('columns');
 
@@ -25,7 +25,7 @@ module.exports.card = function(elem, cards) {
         columns.appendChild(column);
     }
 
-    elem.appendChild(columns);
+    return columns;
 };
 
 module.exports.modal = function(content, showCloseButton=true) {

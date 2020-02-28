@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="dist/bulma.bundle.js"></script>
+    <script type="text/javascript" src="dist/font.bundle.js"></script>
+    <script type="text/javascript" src="dist/htmlRender.bundle.js"></script>
+    <script type="text/javascript" src="docs/render-basic.js"></script>
+    <script type="text/javascript" src="docs/render-bulma.js"></script>
+    <title>htmlRender</title>
+  </head>
+  <body>
+    html render sandbox
+    <h1>Basic render</h1>
+    <div id="basicArea"></div>
+    <h1>Bulma render</h1>
+    <div id="bulmaArea"></div>
+  <script type="text/javascript">
+    htmlRender("bulma").components.card(document.getElementById('card'), [{content: "aaa"}]);
+  </script>
+  </body>
+</html>
