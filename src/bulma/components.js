@@ -1,6 +1,48 @@
 const basic = require('../basic');
 const active = require('./active.js');
 
+// navbarのメニュー開閉イベント
+function addNavbarBurgerListener() {
+    // Get all "navbar-burger" elements
+    const navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Check if there are any navbar burgers
+    if (navbarBurgers.length > 0) {
+
+        // Add a click event on each of them
+        navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+                toggleNavBurger(el);
+            });
+        });
+    }
+}
+
+function toggleNavBurger(element) {
+    // Get the target from the "data-target" attribute
+    const target = element.dataset.target;
+    const $target = document.getElementById(target);
+
+    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+    active.toggle(element);
+    active.toggle($target);
+}
+
+// DOMツリーが構築された時点で呼ばれる。画像やスタイルシートの読み込みは未完了
+document.addEventListener('DOMContentLoaded', () => {
+    addNavbarBurgerListener();
+});
+
+module.exports.toggleNavBurger = toggleNavBurger;
+
+module.exports.switchNavBurger = function(element, flag = true) {
+    const target = element.dataset.target;
+    const $target = document.getElementById(target);
+
+    active.switch(element, flag);
+    active.switch($target, flag);
+}
+
 module.exports.card = function(cards) {
     const columns = document.createElement('div');
     columns.classList.add('columns');

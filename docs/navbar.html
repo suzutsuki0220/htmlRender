@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja" class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="../dist/bulma.bundle.js"></script>
+    <script type="text/javascript" src="../dist/font.bundle.js"></script>
+    <script type="text/javascript" src="../dist/htmlRender.bundle.js"></script>
+  <script type="text/javascript">
+    const bulmaRender = htmlRender("bulma");
+  </script>
+    <title>htmlRender</title>
+  </head>
+  <body>
+    <nav class="navbar is-link is-fixed-top" role="navigation">
+      <div class="navbar-brand"> <!-- left side of the navbar -->
+        <a role="button" class="navbar-burger burger" aria-label="menu" data-target="myMenu" id="burger">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="myMenu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="#">start</a>
+        </div>
+        <div class="navbar-end">
+          <a class="navbar-item" href="#">end1</a>
+          <a class="navbar-item" href="#">end2</a>
+          <a class="navbar-item" href="#">end3</a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link is-arrowless"><i class="fas fa-ellipsis-v"></i></a>
+            <div class="navbar-dropdown is-right" id="action-drop-list">
+              <a class="navbar-item" href="javascript:bulmaRender.components.switchNavBurger(document.querySelectorAll('.navbar-burger')[0], false)">drop1</a>
+              <a class="navbar-item" href="javascript:bulmaRender.components.switchNavBurger(document.querySelectorAll('.navbar-burger')[0])">drop2</a>
+              <a class="navbar-item" href="javascript:bulmaRender.components.switchNavBurger(document.querySelectorAll('.navbar-burger')[0])">drop3</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
