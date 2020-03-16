@@ -11,3 +11,13 @@ module.exports.okButton = function(text, onClick) {
 module.exports.cancelButton = function(text, onClick) {
     return basic.event.setOnClick(button(text, {class: "button"}), onClick);
 };
+
+module.exports.loading = function(element, flag = true) {
+    if (flag === true) {
+        element.classList.add('is-loading');
+    } else {
+        element.classList.remove('is-loading');
+    }
+
+    element.disabled = flag;
+};
