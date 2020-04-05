@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="javascript/render-basic.js"></script>
+    <script type="text/javascript" src="javascript/render-bulma.js"></script>
+    <script type="text/javascript">
+      function loadScript(uri) {
+        const s = document.createElement('script');
+        s.src = uri;
+        document.querySelector("head").appendChild(s);
+      }
+    </script>
+    <title>htmlRender</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      loadScript("//" + location.hostname + ":8080/bulma.bundle.js");
+      loadScript("//" + location.hostname + ":8080/font.bundle.js");
+      loadScript("//" + location.hostname + ":8080/htmlRender.bundle.js");
+    </script>
+
+    html render sandbox
+    <h1>Basic render</h1>
+    <div id="basicArea"></div>
+    <h1>Bulma render</h1>
+    <div id="bulmaArea"></div>
+    <a href="navbar.html">navbar</a>
+  </body>
+</html>

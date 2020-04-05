@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* global basicRender, htmlRender */
 
-const bulmaRender = htmlRender("bulma");
+let bulmaRender;
 
 window.addEventListener("load", function(event) {
+    bulmaRender = htmlRender("bulma");
     const elem = document.getElementById('bulmaArea');
 
     elem.appendChild(

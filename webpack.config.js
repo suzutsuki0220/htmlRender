@@ -4,6 +4,7 @@ const MODE = 'development';  // 'production' or 'development'
 const enabledSourceMap = (MODE === 'development');
 
 const path = require('path');
+const outputPath = path.join(__dirname, 'dist');
 
 module.exports = {
     mode: MODE,
@@ -16,7 +17,7 @@ module.exports = {
         htmlRender: './webpack-index.js'
     },
     output: {
-        path: path.join(__dirname, 'dist'),
+        path: outputPath,
         filename: '[name].bundle.js'
     },
     module: {
@@ -52,6 +53,10 @@ module.exports = {
                 loader: 'url-loader'
             }
         ],
+    },
+    devServer: {
+        host: '0.0.0.0',
+        contentBase: outputPath
     },
     externals: [
         'fs',

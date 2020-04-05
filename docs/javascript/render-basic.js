@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* global htmlRender */
 
-const basicRender = htmlRender("basic");
+let basicRender;
 
 window.addEventListener("load", function(event) {
+    basicRender = htmlRender("basic");
     const elem = document.getElementById('basicArea');
 
     elem.appendChild(basicRender.element.newNode('button', 'button normal'));

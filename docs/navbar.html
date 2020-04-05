@@ -2,15 +2,23 @@
 <html lang="ja" class="has-navbar-fixed-top">
   <head>
     <meta charset="utf-8">
-    <script type="text/javascript" src="../dist/bulma.bundle.js"></script>
-    <script type="text/javascript" src="../dist/font.bundle.js"></script>
-    <script type="text/javascript" src="../dist/htmlRender.bundle.js"></script>
-  <script type="text/javascript">
-    const bulmaRender = htmlRender("bulma");
-  </script>
+    <script type="text/javascript">
+      function loadScript(uri) {
+        const s = document.createElement('script');
+        s.src = uri;
+        document.querySelector("head").appendChild(s);
+      }
+    </script>
     <title>htmlRender</title>
   </head>
   <body>
+    <script type="text/javascript">
+      loadScript("//" + location.hostname + ":8080/bulma.bundle.js");
+      loadScript("//" + location.hostname + ":8080/font.bundle.js");
+      loadScript("//" + location.hostname + ":8080/htmlRender.bundle.js");
+      const bulmaRender = htmlRender("bulma");
+    </script>
+
     <nav class="navbar is-link is-fixed-top" role="navigation">
       <div class="navbar-brand"> <!-- left side of the navbar -->
         <a role="button" class="navbar-burger burger" aria-label="menu" data-target="myMenu" id="burger">
