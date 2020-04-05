@@ -14,6 +14,7 @@ window.addEventListener("load", function(event) {
     );
 
     elem.appendChild(okButton());
+    elem.appendChild(fileButton());
 });
 
 function okButton() {
@@ -32,4 +33,8 @@ function okButton() {
     );
 
     return buttons;
+}
+
+function fileButton() {
+    return bulmaRender.form.file('<i class="fas fa-upload"></i>', 'Choose a file...', 'uploadfile');
 }

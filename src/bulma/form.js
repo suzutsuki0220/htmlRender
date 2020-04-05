@@ -26,3 +26,22 @@ module.exports.formHelp = function(type, message) {
 
     return help;
 };
+
+module.exports.file = function(icon, label, name) {
+    const fileCta = basic.element.newNode('span', '', {class: 'file-cta'});
+
+    if (icon) {
+        fileCta.appendChild(basic.element.newNode('span', icon, {class: 'file-icon'}));
+    }
+    fileCta.appendChild(basic.element.newNode('span', label, {class: 'file-label'}));
+
+    const l = basic.element.newNode('label', '', {class: 'file-label'});
+    l.appendChild(basic.element.newNode('input', '', {class: 'file-input', type: 'file', name: name}));
+    l.appendChild(fileCta);
+    l.appendChild(basic.element.newNode('span', '', {class: 'file-name'}));
+
+    const div = basic.element.newNode('div', '', {class: 'file has-name is-fullwidth'});
+    div.appendChild(l);
+
+    return div;
+};
