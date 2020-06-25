@@ -9,11 +9,12 @@ module.exports.notification = function(level, message, autoClose=3000, showClose
         error:   {class: "notification is-danger"}
     };
 
+    const notif = basic.element.newNode('div', message, c[level]);
+
     if (!isNaN(autoClose)) {
         closeTimerID = setTimeout(function() { basic.element.remove(notif); }, autoClose);
     }
 
-    const notif = basic.element.newNode('div', message, c[level]);
     if (showCloseButton === true) {
         notif.appendChild(internal.closeButton(notif, closeTimerID));
     }
